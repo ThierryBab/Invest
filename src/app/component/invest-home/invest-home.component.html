@@ -1,0 +1,34 @@
+<div class="container">
+  <header>
+    <h1>Investing Calculator</h1>
+    <p>Plan your investments wisely</p>
+  </header>
+
+  <div class="calculator">
+    <label for="initial-investment">Initial Investment ($):</label>
+    <input type="number" id="initial-investment" [(ngModel)]="initialInvestment" placeholder="Enter amount" />
+
+    <label for="monthly-contribution">Monthly Contribution ($):</label>
+    <input type="number" id="monthly-contribution" [(ngModel)]="monthlyContribution" placeholder="Enter amount" />
+
+    <label for="years">Years to Grow:</label>
+    <input type="number" id="years" [(ngModel)]="years" placeholder="Enter number of years" />
+
+    <label for="rate-of-return">Expected Rate of Return (%):</label>
+    <input type="number" id="rate-of-return" [(ngModel)]="rateOfReturn" placeholder="Enter percentage" />
+
+    <button class="calculate-btn" (click)="calculateInvestment()">Calculate</button>
+  </div>
+
+  <!-- Display the calculated future value -->
+  <div *ngIf="futureValue !== null" class="result">
+    <h2>End Balance: ${{ futureValue | number: '1.2-2' }}</h2>
+    <h3>Starting Amount: ${{ initialInvestment | number: '1.2-2' }}</h3>
+    <h3>Total Contributions: ${{ totalContributions | number: '1.2-2' }}</h3>
+    <h3>Total Interest: ${{ interest | number: '1.2-2' }}</h3>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Invest Calculator. All rights reserved.</p>
+  </footer>
+</div>
