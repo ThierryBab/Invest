@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import { InvestHomeComponent } from './component/invest-home/invest-home.component';
 import { AboutComponent } from './component/about/about.component';
-import { AppBarModule, NavigationModule } from "@progress/kendo-angular-navigation";
 
 
 @Component({
